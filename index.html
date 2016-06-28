@@ -3,16 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <title>Wasm Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <style>
       body {
         font-family: 'Open Sans', sans-serif;
+        padding: 80px 40px;
       }
+
+      @import 'https://fonts.googleapis.com/css?family=Merriweather+Sans:700,600,400|Open+Sans:400';
+
+      html {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+      }
+
+      h1 {
+          font-size: 28px;
+          line-height: 1.20;
+          font-weight: 700;
+          opacity: 1.0;
+          letter-spacing: -0.72px;
+          word-spacing: 0.00px;
+          text-transform: none;
+          margin-top: 0px;
+          margin-bottom: 10px;
+      }
+
+      h3 {
+          font-size: 20px;
+          line-height: 1.20;
+          font-weight: 400;
+          opacity: 0.9;
+          letter-spacing: 0.00px;
+          word-spacing: 0.00px;
+          text-transform: none;
+          margin-top: 0px;
+          margin-bottom: 5px;
+      }
+
+      p {
+          font-size: 18px;
+          line-height: 1.65;
+          font-weight: 400;
+          opacity: 0.7;
+          letter-spacing: -0.06px;
+          word-spacing: 0.00px;
+          text-transform: none;
+          margin-top: 0px;
+          margin-bottom: 25px;
+      }
+
+
     </style>
 </head>
 <body>
-  <h3>WASM Demo</h3>
-  <p>Check the console for output</p>
+  <h1>Dhan te nan, Web Assembly is here..!!!</h1>
+  <h3>Hello World in Web Assembly...</h3>
+  <br><br>
+  <p>
+    <div>Tools I used to build .wasm: <a href="https://github.com/WebAssembly/binaryen">WebAssembly github page</a></div>
+    <div>Source code: <a href="https://github.com/sandeshdamkondwar/wasm-demo">https://github.com/sandeshdamkondwar/wasm-demo</a></div>
+  </p>
+  <br><br>
+  <p>***Check the console for output***</p>
   <script>
     if(typeof Wasm !== "undefined") {
       fetch("hello-world.wasm")
@@ -37,15 +91,14 @@
     }
   </script>
   <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-42457770-4', 'auto');
-  ga('send', 'pageview');
-
-</script>
+    ga('create', 'UA-42457770-4', 'auto');
+    ga('send', 'pageview');
+  </script>
 
 </body>
 </html>
