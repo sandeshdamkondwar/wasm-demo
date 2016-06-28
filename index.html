@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wasm Demo</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+      }
+    </style>
+</head>
+<body>
+  <h3>WASM Demo</h3>
+  <p>Check the console for output</p>
+  <script>
+    if(typeof Wasm !== "undefined") {
+      fetch("hello-world.wasm")
+        .then(function(response) {
+            return response.arrayBuffer();
+        })
+        .then(function(buffer) {
+          var dependencies = {
+            "global": {},
+            "env": {}
+          };
+          dependencies["global.Math"] = window.Math;
+          var moduleBufferView = new Uint8Array(buffer);
+          var myMathModule = Wasm.instantiateModule(moduleBufferView, dependencies);
+          console.log(myMathModule.exports.doubleExp);
+          for(var i = 0; i < 5; i++) {
+            console.log(myMathModule.exports.doubleExp(i));
+          }
+        });
+    } else {
+      console.log('Enable the experimental flags for web assembly in your browser.');
+    }
+  </script>
+  <script>
+
+  </script>
+
+</body>
+</html>
